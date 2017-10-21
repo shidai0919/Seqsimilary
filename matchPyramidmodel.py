@@ -2,19 +2,23 @@
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
+from keras.models import Sequential
+model = Sequential()
 # In[17]:
+import pickle
 import numpy as np
 import jieba
 import string
 import pprint,pickle
-f=open.('match.txt')
+f=open.('matchq.txt')
 fm=open('word.pkl','rb')
 lines = f.readlines()
+sum=[]
 for line in lines:
     match=[]
-    if(line.split("\t").len()==3){
-        a=list(jieba.cut(line.split("\t")[0],cut_all=True)).len()
-        b=list(jieba.cut(line.split("\t")[1],cut_all=True)).len()
+    if len(line.split("\t"))==3
+        a=len(list(jieba.cut(line.split("\t")[0],cut_all=True)))
+        b=len(list(jieba.cut(line.split("\t")[1],cut_all=True)))
         for wi in list(jieba.cut(line.split("\t")[0],cut_all=True)):
             if(data.has_key(wi)):
 
@@ -30,5 +34,9 @@ for line in lines:
             else:
                 for vi in list(jieba.cut(line.split("\t")[1],cut_all=True)):
                     match.append(0)
-        match.reshape(a,b) 
-    }
+        arr=np.array(match).reshape(a,b)
+        sum.append(arr)
+
+output = open('d+d-array.pkl', 'wb')
+pickle.dump(a, output)
+output.close()
