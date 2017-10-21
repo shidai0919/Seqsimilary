@@ -35,6 +35,7 @@ for line in lines:
                 for vi in list(jieba.cut(line.split("\t")[1],cut_all=True)):
                     match.append(0)
         arr=np.array(match).reshape(a,b)
+        print arr
         sum.append(arr)
 
 output = open('d+d-array.pkl', 'wb')
